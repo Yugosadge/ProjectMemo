@@ -1,5 +1,6 @@
 import * as save from "./save.js";
 import * as display from "./display.js";
+import * as game from "./game.js";
 var connected;
 
 //Hide or display content div according to navigation buttons, Default display:Home
@@ -67,3 +68,4 @@ document.getElementById("navProfil").addEventListener("click", () => {
       "Vous n'êtes pas connecté";
   }
 });
+document.getElementById("navGame").addEventListener("click",game.game)
