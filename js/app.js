@@ -4,11 +4,7 @@ import * as game from "./game.js";
 var connected;
 
 //Hide or display content div according to navigation buttons, Default display:Home
-document
-  .getElementById("Nav")
-  .addEventListener("click", () =>
-    display.changeCurrent(Array.from(document.getElementsByClassName("navBtn")))
-  );
+display.changeCurrent(Array.from(document.getElementsByClassName("navBtn")))
 
 //Register/login/profil
 document.querySelectorAll("form").forEach((form) => {
