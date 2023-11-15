@@ -64,4 +64,10 @@ document.getElementById("navProfil").addEventListener("click", () => {
       "Vous n'êtes pas connecté";
   }
 });
+//lance le jeu au click sur jouer ou espace
 document.getElementById("navGame").addEventListener("click",game.game)
+if(document.getElementById("cGame").style.display != "none"    ){
+  document.addEventListener("keyup", game.game);
+}else{
+  document.removeEventListener("keyup",game.game)
+}
