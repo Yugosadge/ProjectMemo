@@ -6,7 +6,7 @@
 body{
     width:100vw;
     height: 100vh;
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(150, 150, 150);
 }
 p{
     margin: 1%;
@@ -28,7 +28,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    font-weight:bold ;
 }
 #Nav{
     width: calc(50% + 40px);

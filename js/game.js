@@ -4,6 +4,7 @@ var nbcoup = 0
 var cardx = 0
 
 export function game(user){
+  //all img array(key,[])
      const imgArray = {
        "memory-legume": [
          "./srcs/memory-legume/1.svg",
@@ -172,11 +173,12 @@ export function game(user){
         }
       }
     }
-    //clean le cGame
+    //clean grid cGame
     const grille = document.getElementById("cGame")
     while(grille.lastChild){
         grille.removeChild(grille.lastChild)
     }
+    //Set display grid's row and column according to user's profil
     const grid = document.getElementById("cGame")
     if(user){
       grid.style.gridTemplateColumns="repeat(" + arrayColumn[x] + ",1fr)"
@@ -221,18 +223,14 @@ let turned = 0
 function getCard(e){
     let good =false
     if(tour%2==0){
-        do{
-            good = turnCheck(e)
-        }while (good = false)
+        turnCheck(e)
         firstCard = e.target
         tour++
         turned++
         disableClick();
         enableClick();
     }else{
-        do{
-            good = turnCheck(e)
-        }while (good = false)
+        turnCheck(e)
         secondCard = e.target
         tour++
         turned++
@@ -265,12 +263,12 @@ function checkCard(first,second){
 }
 function checkWin(){
     let Win=0
-    for(let i=0;i<cardx;i++){
+    for(let i=0;i<cardx*2;i++){
       if (document.getElementById("cGame").children[i].getAttribute("value") == 2) {
         Win++;
       }
     }
-    if(Win == cardx){
+    if(Win == cardx*2){
         disableClick()
         afficherWin()
     }else{
@@ -283,9 +281,6 @@ function getRandomInt(min,max) {
 function turnCheck(elem){
     if(!elem.target.getAttribute("value")){
         turn(elem)
-        return true;
-    }else{
-        return false;
     }
 }
 function turn(elem){
@@ -298,14 +293,14 @@ function unTurn(elem){
 }
 function disableClick(){
     document
-      .getElementById("cGame")
+      
       .querySelectorAll(".gameCard")
       .forEach((card) => {
         card.removeEventListener("click", getCard);
       });
 }
 function enableClick(){
-    document.getElementById("cGame").querySelectorAll(".gameCard").forEach(card => {
+    document.querySelectorAll(".gameCard").forEach(card => {
         if (
           (card.getAttribute("value") != 1) &
           (card.getAttribute("value") != 2)

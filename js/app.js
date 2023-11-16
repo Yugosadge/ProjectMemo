@@ -23,7 +23,7 @@ document.querySelectorAll("form").forEach((form) => {
             if (document.getElementById("moyen").style.visibility == "visible"){
               const Registerx = save.getFormData(form);
               Registerx["images"] = "memory-legume";
-              Registerx["tailleMemo"] = "[4,3]";
+              Registerx["tailleMemo"] = "0";
               save.saveDataLo(save.getFormData(form).email, Registerx);
             }else{
               alert("mdp pas assez fort")
@@ -70,7 +70,7 @@ document.querySelectorAll("form").forEach((form) => {
     }
   });
 });
-//
+//affichage password power
 document.getElementById("password").addEventListener("keyup", () => {
       const mdp = document.getElementById("password").value
       document.getElementById("faible").style.visibility = "hidden"
