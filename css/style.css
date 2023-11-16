@@ -34,7 +34,6 @@ nav{
     width: calc(50% + 40px);
     justify-content: center;
     align-items: end;
-    perspective: 4cm;
 }
 .navBtn{
     width:calc(100% / 6);
@@ -43,8 +42,6 @@ nav{
     height: 60%;
     font-size: 1.2rem;
     border-bottom: solid 1px black;
-    transition: 0.2s;
-    transform-style: preserve-3d;
 }
 .navBtn:nth-child(2n){
     border-left: solid 1px black;
@@ -59,7 +56,10 @@ nav{
     
 }
 .navBtn:hover{
-    transform: translateZ(10px);
+    transform: translateY(-5px);
+}
+.navBtn:active{
+    transform: translateY(1px);
 }
 li{
     display: flex;
@@ -83,33 +83,94 @@ li{
     margin-top: 4vh;
     margin-bottom: 2vh;
 }
+label{
+    padding:5px 10px 5px 10px;
+    font-weight: 600;
+    background-color: rgb(116, 116, 116);
+    width: fit-content;
+    border-radius: 10px 10px 0px 0;
+}
+input,select{
+    background-color: rgb(189, 189, 189);
+    line-height: 30px;
+    margin-bottom: 4%;
+    border-radius: 0 10px 10px 10px;
+    padding-left: 3%;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+}
+select{
+    height: 30px;
+}
+input:hover{
+    background-color: rgb(209, 209, 209);
+}
+#cProfil input,select{
+    margin-bottom: 2%;
+}
+button{
+    font-size: larger;
+    font-weight:bold ;
+    width: fit-content;
+    padding: 1%;
+    margin: 2%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 5px black;
+}
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 5px black;
+}
+button:active{
+    transform: translateY(5px);
+    box-shadow: 0 0 5px black;
+}
+.formBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .mainContainer{
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 form{
     display:flex;
     flex-direction: column;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 .content{
     position: absolute;
     width:50%;
-    height: calc(70% - 40px);
+    height: calc(100% - 20vh);
     background-color: rgb(75, 75, 75);
     padding: 20px;
     border-radius: 10px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.788);
+}
+.shadowd{
+    width: 100%;
+    height: calc(100% - 20vh);
+    filter:drop-shadow(10px 10px 10px black)
+}
+h2{
+    text-align: center;
+    margin-bottom: 4%;
 }
 #cHome{
     display: flex;
     flex-direction: column;
 }
 .homeImg{
-    width:50%;
+    width:30%;
+    align-self: center;
+    margin: 2%;
 }
 .homeUl{
     height: fit-content;
@@ -136,6 +197,7 @@ form{
 }
 #cSignIn {
     display: none;
+    flex-direction: column;
 }
 #cProfil {
     display: none;
@@ -145,13 +207,14 @@ form{
     text-align: center;
 }
 #cProfil img {
-    width: 30%;
+    width: 10%;
     align-self: center;
+}
+#cProfil button{
+    margin: 0;
 }
 #cGame {
     display: none;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,1fr);
     gap: 1%;
     perspective: 20cm;
     -webkit-user-drag: none;
@@ -216,4 +279,34 @@ form{
 }
 .piti{
     font-size: x-large;
+}
+#password{
+    margin-bottom: 2%;
+}
+.mdpPower{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+}
+#faible{
+    text-align: center;
+    width: 30%;
+    height: fit-content;
+    border-top: solid 3px red;
+    visibility: hidden;
+}
+#moyen{
+    text-align: center;
+    width: 30%;
+    height: fit-content;
+    border-top: solid 3px orange;
+    visibility: hidden;
+}
+#fort{
+    text-align: center;
+    width: 30%;
+    height: fit-content;
+    border-top: solid 3px green;
+    visibility: hidden;
 }

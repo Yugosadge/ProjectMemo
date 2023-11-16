@@ -11,7 +11,10 @@
       <div class="headTitle" id="headTitle">
         <h1>ENI - <strong>MEMORY</strong> - <strong id="current">Accueil</strong></h1>
       </div>
-      <nav>
+     
+    </header>
+    <div class="shadowd">
+     <nav>
         <ul id="Nav">
           <li class="navBtn" value="cHome">Accueil</li>
           <li class="navBtn" value="cRegister">S'inscrire</li>
@@ -20,8 +23,6 @@
           <li class="navBtn" value="cGame" id="navGame">Jouer</li>
         </ul>
       </nav>
-    </header>
-    
     <div class="mainContainer">
       <div class="content" id="cHome">
         <p>Bienvenue sur le site du Memory de l'ENI. <br> Venez jouer avec nous et faites le meilleur score possible.</p>
@@ -35,7 +36,7 @@
         <img src="./srcs/memory-legume/memory_detail.png" alt="memory-legume" class="homeImg">
         <p>Si vous voulez vous souvenir de votre score.Inscrivez-vous via le formulaire. <br> Le jeu garde les <strong>5 meilleurs</strong> scores. <br> Si vous voulez relancer une partie cliquez sur <strong>la barre d'espace</strong>.</p>
       </div>
-      <div class="content" id="cRegister"
+      <div class="content" id="cRegister">
         <h2>Inscrivez-vous</h2>
         <form id="formRegister">
           <label for="username">Nom d'utilisateur</label>
@@ -43,10 +44,15 @@
           <label for="email">Entrez votre email</label>
           <input required type="email" name="email">
           <label for="password" patern="">Mot de passe</label>
-          <input required type="password" name="password">
+          <input required type="password" name="password" id="password">
+           <div class="mdpPower">
+            <div id="faible">faible</div>
+            <div id="moyen">moyen</div>
+            <div id="fort">fort</div>
+          </div>
           <label for="passwordR">Confirmez le mot de passe</label>
           <input required type="password" name="passwordR">
-          <div><button type="submit" class="submit">Valider</button>
+          <div class="formBtn"><button type="submit" class="submit">Valider</button>
           <button type="reset">Annuler</button></div>
         </form>
       </div>
@@ -57,7 +63,7 @@
           <input required type="email" name="email">
           <label for="password" >Mot de passe</label>
           <input required type="password" name="password">
-          <div><button type="submit" class="submit">Valider</button>
+          <div class="formBtn"><button type="submit" class="submit">Valider</button>
           <button type="reset">Annuler</button></div>
         </form>
       </div>
@@ -71,16 +77,25 @@
         <input type="email" name="email" id="pEmail">
         <label for="cardstyle">Choix du Memory</label>
         <select name="cardstyle" id="cardstyle">
-          <option value="aaa">aaa</option>
-          <option value="bbb">bbb</option>
+          <option value="memory-legume">Legumes</option>
+          <option value="alphabet-scrabble">Alphabet scrabble</option>
+          <option value="animaux">Animaux</option>
+          <option value="animauxAnimes">Animes animes</option>
+          <option value="animauxdomestiques">Animaux domestiques</option>
+          <option value="chiens">Chiens</option>
+          <option value="dinosaures">Dinosaures</option>
+          <option value="dinosauresAvecNom">Dinosaures avec nom</option>
         </select>
         <label for="tailleMemo">Taille grille</label>
-        <select name="tailleMemo" id="tailleMemo"></select>
-        <button type="submit" class="submit">Valider</button>
+        <select name="tailleMemo" id="tailleMemo">
+          <option value="0">4 X 3</option>
+        </select>
+        <div class="formBtn"><button type="submit" class="submit">Valider</button></div>
         </form>
       </div>
       <div class="content" id="cGame">
       </div>
+    </div>
     </div>
     <script type="module" src="./js/app.js"></script>
   </body>

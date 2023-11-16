@@ -7,13 +7,19 @@ export var conn = 0;
 export function getData(key){
     return JSON.parse(localStorage.getItem(key)) ?? []
 }
+export function getDataSe(key) {
+  return JSON.parse(sessionStorage.getItem(key)) ?? [];
+}
 /**
  * 
  * @param {string} key 
  * @param {array}} data 
  */
- export function saveData(key, data){
+ export function saveDataLo(key, data){
     localStorage.setItem(key, JSON.stringify(data))
+}
+export function saveDataSe(key, data) {
+  sessionStorage.setItem(key, JSON.stringify(data));
 }
 //get formJSON then save if register. login if 
 export function getFormData(form){
@@ -29,4 +35,3 @@ export function checkPassw(data){
         return false;
     }
 }
-

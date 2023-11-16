@@ -1,5 +1,5 @@
 //Hide or display content div according to navigation buttons, Default display:Home
-export function changeCurrent(btns){
+export function changeCurrent(btns,user){
     btns.forEach(elem => {
         elem.addEventListener("click",()=> {
             for (let i = 0; i < btns.length; i++){
